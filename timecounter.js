@@ -126,7 +126,7 @@ class TimeCounter{
         }
         emb.setFooter("Guilds: "+text);
         if(emb != null)
-           channel.send(emb);
+           channel.sendEmb(emb);
         else
            channel.send("No activity today.");
 
