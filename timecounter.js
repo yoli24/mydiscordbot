@@ -122,7 +122,8 @@ class TimeCounter{
                     timeType="hours";
                 }
             }
-            time = parseFloat(Math.round(time * 100) / 100).toFixed(2);
+              if(!time.toString().includes('.00'))
+              time = parseFloat(Math.round(time * 100) / 100).toFixed(2);
             text+=name+": "+time + " " + timeType +"\n";
         }
         var emb = new Discord.RichEmbed();
