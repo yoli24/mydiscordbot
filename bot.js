@@ -9,7 +9,7 @@ bot.on('ready', async()=>{
     fs.readFile('./file.json', 'utf8', function(err, contents) {
         console.log(contents);
     });
-    fs.writeFileSync('./file.json', JSON.stringify(x));
+   // fs.writeFileSync('./file.json', JSON.stringify(x));
     //console.log("\x1b[42m%s\x1b[0m", `Connected to ${bot.user.tag}!`);
 
 });
