@@ -24,6 +24,7 @@ class TimeCounter{
     }
     static CheckDate(bot){
         var dateNow = new Date();
+        dateNow.setHours(dateNow.getHours()+2);
         if(dateNow.getDay()!=currentDate.getDay()){
             this.Notifications(bot);
             this.NewDate();
@@ -34,21 +35,10 @@ class TimeCounter{
     static TimerTick(bot){
         var guild;
         todayTimeOnline = [];
-         if(!todayTimeIDS.includes('265205555075743754')){
-           todayTimeIDS.push('265205555075743754');
-           todayTimeCounter.push(tickTime);
-
-           todayTimeOnline.push('265205555075743754');
-        }
-         else{
-            var index = todayTimeIDS.indexOf('265205555075743754');
-            todayTimeCounter[index] += tickTime;
-
-            todayTimeOnline.push('265205555075743754');
-        }
                         
         for(var i = 0; i<channelIDS.Guilds.length;i++){
             guild = bot.guilds.find(guild => guild.id == channelIDS.Guilds[i].GuildID);
+            if(guild!=null){
             var members = guild.members.filter(member => member.voiceChannel!=null);
             members.forEach(function(member){
                 var voiceChannel = member.voiceChannel;
@@ -69,6 +59,7 @@ class TimeCounter{
                     }
                 }
             });
+        }
         }
     }
 
