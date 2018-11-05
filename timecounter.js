@@ -47,7 +47,7 @@ class TimeCounter{
                     channelId = channelIDS.Guilds[i].Channels[j];
                     if(voiceChannel.name.includes(channelId) || voiceChannel.id == channelId){
                         todayTimeOnline.push(member.id);
-
+                        
                         if(!todayTimeIDS.includes(member.id)){
                             todayTimeIDS.push(member.id);
                             todayTimeCounter.push(tickTime);
@@ -112,7 +112,18 @@ class TimeCounter{
             if(todayTimeOnline.includes(todayTimeIDS[i])){
                 text+="[Online] ";
             }
-            text+=name+": "+todayTimeCounter[i]+" seconds \n";
+            var time = todayTimeCounter[i];
+           var timeType="seconds";
+        if(time>=60){
+            time=time/60;
+            timeType="minutes";
+                if(time>=60){
+                    time=time/60;
+                    timeType="hours";
+                }
+            }
+            time = parseFloat(Math.round(time * 100) / 100).toFixed(2);
+            text+=name+": "+time + " " + timeType +"\n";
         }
         var emb = new Discord.RichEmbed();
         emb.addField("Summary for today: "+currentDate.toDateString(), text);
