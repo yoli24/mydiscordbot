@@ -112,7 +112,7 @@ class TimeCounter{
             if(todayTimeOnline.includes(todayTimeIDS[i])){
                 text+="[Online] ";
             }
-            var time = todayTimeCounter[i];
+        var time = todayTimeData[i]/1000;
            var timeType="seconds";
         if(time>=60){
             time=time/60;
