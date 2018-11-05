@@ -16,7 +16,7 @@ const prefix = '!';
 var cmd;
 var helpMessage = "Bot commands: !today, !total"
 bot.on('message', (message)=>{
-    if(!message.author.bot && message.author.id != bot.user.id){
+    if(message.channel.type == "dm" && !message.author.bot && message.author.id != bot.user.id){
         cmd = message.content.split(' ')[0];
 
         switch(cmd){
