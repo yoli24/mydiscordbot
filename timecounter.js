@@ -19,13 +19,13 @@ class TimeCounter{
             this.TodayToString(bot, user);
         }
     }
-    static NewDate(bot){
+    static NewDate(){
         currentDate = new Date();
-        this.Notifications(bot);
     }
     static CheckDate(bot){
         var dateNow = new Date();
         if(dateNow.getDay()!=currentDate.getDay()){
+            this.Notifications(bot);
             this.NewDate();
             todayTimeIDS=[];
             todayTimeCounter=[];
