@@ -13,6 +13,10 @@ var notifications =['242360233593274369', '331103748376100897'];
 
 class TimeCounter{
     static Notifications(bot){
+         var dateNow = new Date();
+        dateNow.setHours(dateNow.getHours()+2);
+        if(dateNow.getDay()==currentDate.getDay())
+            return;
         var user;
         for(var i =0;i<notifications.length;i++){
             user = bot.users.find(user=> user.id == notifications[i]);
@@ -26,7 +30,7 @@ class TimeCounter{
         var dateNow = new Date();
         dateNow.setHours(dateNow.getHours()+2);
         if(dateNow.getDay()!=currentDate.getDay()){
-            this.Notifications(bot);
+            //this.Notifications(bot);
             this.NewDate();
             todayTimeIDS=[];
             todayTimeCounter=[];
