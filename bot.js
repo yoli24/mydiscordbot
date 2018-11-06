@@ -8,7 +8,10 @@ bot.on('ready', async()=>{
 
     timeCounter.NewDate(bot);
     bot.setInterval(function(){timeCounter.TimerTick(bot)}, 10000);
-    bot.setInterval(function(){timeCounter.CheckDate(bot)}, 3600000)
+    bot.setInterval(function(){
+        timeCounter.SendNotifications(bot);
+        timeCounter.CheckDate(bot);
+    }, 3600000)
 });
 
 
