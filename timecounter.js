@@ -6,16 +6,16 @@ var channelIDS = {
 var todayTimeIDS = [];
 var todayTimeCounter = [];
 var todayTimeOnline = [];
-const tickTime = 10000; //10 seconds
+const tickTime = 60000; //10 seconds
 var o = [];
 var currentDate;
-var notifications =['242360233593274369'];//, '331103748376100897'];
+var notifications =['242360233593274369', '331103748376100897'];
 
 class TimeCounter{
     static Notifications(bot){
          var dateNow = new Date();
         dateNow.setHours(dateNow.getHours()+2);
-        if(dateNow.getSeconds()==currentDate.getSeconds())
+        if(dateNow.getDay()==currentDate.getDay())
             return;
         var user;
         for(var i =0;i<notifications.length;i++){

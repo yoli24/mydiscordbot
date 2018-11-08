@@ -6,14 +6,11 @@ var timeCounter = require('./timecounter.js');
 bot.on('ready', async()=>{
     console.log("\x1b[32m", 'Connected to '+bot.user.username+'!');
     timeCounter.NewDate(bot);
-    bot.setInterval(function(){timeCounter.TimerTick(bot)}, 10000);
-	 bot.setInterval(function(){
-        timeCounter.Notifications(bot);
-    }, 10000)
-   /* bot.setInterval(function(){
+    bot.setInterval(function(){timeCounter.TimerTick(bot)}, 60000);
+    bot.setInterval(function(){
         timeCounter.Notifications(bot);
     }, 3600000)
-	*/
+	
 });
 
 
