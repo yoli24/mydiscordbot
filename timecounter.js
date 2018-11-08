@@ -22,7 +22,7 @@ class TimeCounter{
             user = bot.users.find(user=> user.id == notifications[i]);
             this.TodayToString(bot, user);
         }
-        CheckDate(bot);
+        this.CheckDate(bot);
     }
     static NewDate(){
         currentDate = new Date();
