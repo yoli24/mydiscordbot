@@ -9,34 +9,26 @@ var todayTimeOnline = [];
 const tickTime = 10000; //10 seconds
 var o = [];
 var currentDate;
-var notifications =['242360233593274369', '331103748376100897'];
+var notifications =['242360233593274369'];//, '331103748376100897'];
 
 class TimeCounter{
     static Notifications(bot){
          var dateNow = new Date();
         dateNow.setHours(dateNow.getHours()+2);
-        if(dateNow.getDay()==currentDate.getDay())
+        if(dateNow.getSeconds()==currentDate.getSeconds())
             return;
         var user;
         for(var i =0;i<notifications.length;i++){
             user = bot.users.find(user=> user.id == notifications[i]);
             this.TodayToString(bot, user);
         }
-        this.CheckDate(bot);
+		currentDate = new Date();
+		todayTimeIDS=[];
+        todayTimeCounter=[];
     }
-    static NewDate(){
-        currentDate = new Date();
-    }
-    static CheckDate(bot){
-        var dateNow = new Date();
-        dateNow.setHours(dateNow.getHours()+2);
-        if(dateNow.getDay()!=currentDate.getDay()){
-            //this.Notifications(bot);
-            this.NewDate();
-            todayTimeIDS=[];
-            todayTimeCounter=[];
-        }
-    }
+	static NewDate(){
+		currentDate = new Date();
+	}
     static TimerTick(bot){
         var guild;
         todayTimeOnline = [];
