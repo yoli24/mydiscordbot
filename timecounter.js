@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 var channelIDS = {
-    "Guilds":[{"GuildID": '326996219782234115', "Channels":["NV Squad"]}, 
-    {"GuildID": '486265615988817920',"Channels":[""]}]
+    "Guilds":[{"GuildID": '486240133083955221', "Channels":[""]}]
 };
 var todayTimeIDS = [];
 var todayTimeCounter = [];
@@ -9,7 +8,7 @@ var todayTimeOnline = [];
 const tickTime = 60000; //10 seconds
 var o = [];
 var currentDate;
-var notifications =['242360233593274369', '331103748376100897'];
+var notifications =['242360233593274369'];
 
 class TimeCounter{
     static Notifications(bot){
