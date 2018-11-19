@@ -8,7 +8,7 @@ var todayTimeOnline = [];
 const tickTime = 60000; //10 seconds
 var o = [];
 var currentDate;
-var notifications =['242360233593274369'];
+var notifications =['242360233593274369', '370677171108446208', '495344307293782046'];
 
 class TimeCounter{
     static Notifications(bot){
