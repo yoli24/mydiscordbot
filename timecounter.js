@@ -13,7 +13,6 @@ var notifications =['242360233593274369', '370677171108446208', '495344307293782
 class TimeCounter{
     static Notifications(bot){
          var dateNow = new Date();
-        dateNow.setHours(dateNow.getHours()+2);
         if(dateNow.getDay()==currentDate.getDay())
             return;
         var user;
